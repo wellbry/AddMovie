@@ -49,7 +49,7 @@ export default{
                 description: this.description,
             }
             console.log(movie);
-            $emit       
+            this.$emit('addmovie', movie)       
         },
     },
 }

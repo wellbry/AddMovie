@@ -1,27 +1,22 @@
 
 
 export default {
-    props: {
-        title: String,
-        rating: Number,
-        genre: String,
-        description: String
-    },
+    props: { movie: Object },
     template: `
         <div class="movieCard">
             <p class="movieCardTitle">   
                 <span>
-                    {{ title }}
+                    {{ movie.title }}
                 </span>
                 <span>
-                    {{ rating }}/5
+                    {{ movie.rating }}/5
                 </span>
             </p>
             <p class="movieCardGenre">
-                {{ genre }}
+                {{ movie.genre }}
             </p>
             <p class="movieCardDescription">
-                {{ description }}
+                {{ movie.description }}
             </p>
 
         </div>

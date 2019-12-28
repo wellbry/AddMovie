@@ -9,22 +9,21 @@ export default{
     },
     template: `
         <div id="appWrapper">
-            <add-movie />
+            <add-movie @addmovie="addMovie" />
             <br>
-            <movie-card 
-                title="FightClub"
-                :rating="this.rating"
-                genre="Comedy"
-                description="Placeholder"
-            />
+            
+            <movie-card :movie="movie"/>
+            
         </div>
     `,
     data() {
         return {
-            rating: 4,
+            movie: Object,
         }
     },
     methods: {
-
+        addMovie(movie){
+            this.movie = movie
+        }
     },
 }
