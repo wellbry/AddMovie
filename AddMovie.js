@@ -11,9 +11,7 @@ export default{
 
             <label for="genre">Genre:</label>
             <select name="genre" id="genre" v-model="genre" required>
-                <option value="drama">Drama</option>
-                <option value="comedy">Comedy</option>
-                <option value="sci-fi">Sci-Fi</option>
+                <option v-for="genre in genres" :value="genre">{{ genre }}</option>
             </select>
         
             <label for="description">Description:</label>
@@ -32,6 +30,12 @@ export default{
             rating: '3',
             genre: '',
             description: '',
+            genres: [
+                'Action',
+                'Drama',
+                'Comedy',
+                'Sci-Fi'
+            ]
         }
     },
     methods: {

@@ -1,7 +1,9 @@
 
 
 export default {
-    props: { movie: Object },
+    props: { 
+        movie: Object
+    },
     template: `
         <div class="movieCard">
             <p class="movieCardTitle">   

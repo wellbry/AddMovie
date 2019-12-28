@@ -1,20 +1,19 @@
 import AddMovie from "./AddMovie.js"
-import MovieCard from './MovieCard.js'
+import MovieList from './MovieList.js'
+/* import MovieCard from './MovieCard.js' */
 
 export default{
     name: "app",
     components: {
         AddMovie,
-        MovieCard
+        MovieList
     },
     template: `
         <div id="appWrapper">
             <add-movie @addmovie="addMovie" />
             <br>
             
-            <div v-for="movie in movies">
-                <movie-card :movie="movie"/>
-            </div>
+            <movie-list :movies="this.movies" />
             
         </div>
     `,
