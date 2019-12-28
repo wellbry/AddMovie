@@ -12,18 +12,20 @@ export default{
             <add-movie @addmovie="addMovie" />
             <br>
             
-            <movie-card :movie="movie"/>
+            <div v-for="movie in movies">
+                <movie-card :movie="movie"/>
+            </div>
             
         </div>
     `,
     data() {
         return {
-            movie: Object,
+            movies: [],
         }
     },
     methods: {
         addMovie(movie){
-            this.movie = movie
+            this.movies.push(movie)
         }
     },
 }
