@@ -1,4 +1,4 @@
-
+import Movie from './Movie.js'
 
 export default{
     template: `
@@ -18,7 +18,7 @@ export default{
             <textarea rows="3" cols="30" id="description" v-model="description"></textarea required>
 
             <div class="buttonContainer">
-                <input type="reset" value="Clear">
+                <input type="reset" value="Clear" @click.prevent="clearForm">
                 <input type="submit" value="Add" @click.prevent="addMovie">
             </div>
                   
@@ -27,7 +27,7 @@ export default{
     data() {
         return {
             title: '',
-            rating: '3',
+            rating: 3,
             genre: '',
             description: '',
             genres: [
@@ -39,21 +39,22 @@ export default{
         }
     },
     methods: {
-        printMovie() {
-            console.log(this.title);
-            console.log(this.rating);
-            console.log(this.genre);
-            console.log(this.description);           
-        },
         addMovie() {
-            let movie = {
-                title: this.title,
-                rating: this.rating,
-                genre: this.genre,
-                description: this.description,
-            }
+            let movie = new Movie(
+                this.title,
+                this.rating,
+                this.genre,
+                this.description,
+            )
             console.log(movie);
-            this.$emit('addmovie', movie)       
+            this.$emit('addmovie', movie)
+            this.clearForm()
         },
+        clearForm(){
+            this.title = ''
+            this.rating = 3
+            this.genre = ''
+            this.description = ''
+        }
     },
 }

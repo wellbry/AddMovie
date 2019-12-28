@@ -5,7 +5,7 @@ export default {
         movie: Object
     },
     template: `
-        <div class="movieCard">
+        <div class="movieCard" @click="removeMovie">
             <p class="movieCardTitle">   
                 <span>
                     {{ movie.title }}
@@ -20,7 +20,11 @@ export default {
             <p class="movieCardDescription">
                 {{ movie.description }}
             </p>
-
         </div>
     `,
+    methods: {
+        removeMovie(){
+            this.$emit('removemovie', this.movie)
+        }
+    },
 }
