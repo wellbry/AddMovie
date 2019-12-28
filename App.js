@@ -1,4 +1,4 @@
-import AddMovie from "AddMovie.js"
+import AddMovie from "./AddMovie.js"
 
 export default{
     name: "app",
@@ -6,6 +6,6 @@ export default{
         AddMovie
     },
     template: `
-
+        <add-movie />
     `,
 }
