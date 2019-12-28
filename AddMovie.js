@@ -5,10 +5,9 @@ export default{
         <form class="addMovieForm">
             <label for="title">Title:</label>
             <input type="text" id="title" v-model="title" required>
-            <p>{{ title }}</p>
 
             <label for="myRating">Rating:</label>
-            <input type="range" min="1" max="5" value="3" class="slider" id="myRating" v-model="rating" required>
+            <input type="range" min="1" max="5" class="slider" id="myRating" v-model="rating" required>
 
             <label for="genre">Genre:</label>
             <select name="genre" id="genre" v-model="genre" required>
@@ -18,11 +17,11 @@ export default{
             </select>
         
             <label for="description">Description:</label>
-            <textarea rows="3" cols="30" name="description" id="description" v-model="description"></textarea required>
+            <textarea rows="3" cols="30" id="description" v-model="description"></textarea required>
 
             <div class="buttonContainer">
                 <input type="reset" value="Clear">
-                <input type="submit" value="Add" @click.prevent="printMovie">
+                <input type="submit" value="Add" @click.prevent="addMovie">
             </div>
                   
         </form>
@@ -30,7 +29,7 @@ export default{
     data() {
         return {
             title: '',
-            rating: '',
+            rating: '3',
             genre: '',
             description: '',
         }
@@ -40,8 +39,17 @@ export default{
             console.log(this.title);
             console.log(this.rating);
             console.log(this.genre);
-            console.log(this.description);
-            
-        }
+            console.log(this.description);           
+        },
+        addMovie() {
+            let movie = {
+                title: this.title,
+                rating: this.rating,
+                genre: this.genre,
+                description: this.description,
+            }
+            console.log(movie);
+            $emit       
+        },
     },
 }
