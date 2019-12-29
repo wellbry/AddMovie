@@ -1,6 +1,6 @@
 import Movie from './Movie.js'
 
-export default{
+export default {
     template: `
         <form class="addMovieForm">
             <label for="title">Title:</label>
@@ -45,18 +45,22 @@ export default{
     },
     methods: {
         addMovie() {
-            let movie = new Movie(
-                this.title,
-                this.rating,
-                this.genre,
-                this.description,
-                this.imageUrl,
-            )
-            console.log(movie);
-            this.$emit('addmovie', movie)
-            this.clearForm()
+            if (this.title == '') {
+                alert('Please enter movie title')
+            } else {
+                let movie = new Movie(
+                    this.title,
+                    this.rating,
+                    this.genre,
+                    this.description,
+                    this.imageUrl,
+                )
+                console.log(movie);
+                this.$emit('addmovie', movie)
+                this.clearForm()
+            }
         },
-        clearForm(){
+        clearForm() {
             this.title = ''
             this.rating = 3
             this.genre = ''
