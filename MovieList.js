@@ -4,13 +4,13 @@ export default {
     components: {
         MovieCard
     },
-    props: { 
+    props: {
         movies: Array,
     },
     template: `
         <div class="movieList"> 
 
-                <div v-if="movies.length > 0">
+                <div v-if="movies.length > 0" id="sortByContainer">
                     <label for="sortBy">Sort By:</label>
                     <select name="sortBy" id="sortBy" v-model="sortBy">
                         <option >Title</option>
@@ -19,10 +19,12 @@ export default {
                     </select>
                 </div>
 
-                <movie-card :movie="movie"
-                v-for="movie in sortedMovies"
-                v-bind:key="movie.index"
-                @remove-movie="removeMovie"/>         
+                <div class="movieCardList">
+                    <movie-card :movie="movie"
+                    v-for="movie in sortedMovies"
+                    v-bind:key="movie.index"
+                    @remove-movie="removeMovie"/>         
+                </div>
         </div>
     `,
     data() {
@@ -31,7 +33,7 @@ export default {
         }
     },
     methods: {
-        removeMovie(movie){
+        removeMovie(movie) {
             let index = this.movies.indexOf(movie)
             console.log(index);
             this.movies.splice(index, 1)
@@ -41,7 +43,7 @@ export default {
     computed: {
         sortedMovies() {
             let movies = this.movies.slice();
-            switch (this.sortBy) {        
+            switch (this.sortBy) {
                 case 'Title':
                     movies.sort(function (a, b) {
                         var titleA = a.title.toLowerCase(), titleB = b.title.toLowerCase()

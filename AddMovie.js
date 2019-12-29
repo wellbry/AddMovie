@@ -3,28 +3,44 @@ import Movie from './Movie.js'
 export default {
     template: `
         <form class="addMovieForm">
-            <label for="title">Title:</label>
-            <input type="text" id="title" v-model="title">
 
-            <label for="myRating">Rating:</label>
-            <input type="range" min="1" max="5" class="slider" id="rating" v-model="rating">
-
-            <label for="genre">Genre:</label>
-            <select name="genre" id="genre" v-model="genre">
-                <option disabled value="">Please select one</option>
-                <option v-for="genre in genres">{{ genre }}</option>
-            </select>
-
-            <label for="imageUrl">Image url:</label>
-            <input type="url" v-model="imageUrl">
-        
-            <label for="description">Description:</label>
-            <textarea rows="3" cols="30" id="description" v-model="description"></textarea>
-
-            <div class="buttonContainer">
-                <input type="reset" value="Clear" @click.prevent="clearForm">
-                <input type="submit" value="Add" @click.prevent="addMovie">
+            <div class="addMovieVertContainer">
+                <label for="title">Title:</label>
+                <input type="text" id="title" v-model="title" class="inputField">
             </div>
+
+            <div class="addMovieVertContainer">
+                <label for="myRating">Rating:</label>
+                <span class="inputField">
+                    1<input type="range" min="1" max="5" class="slider" id="rating" v-model="rating" >5
+                </span>
+            </div>
+
+            <div class="addMovieVertContainer">
+                <label for="genre">Genre:</label>
+                <select name="genre" id="genre" v-model="genre" class="inputField">
+                    <option disabled value="">Please select one</option>
+                    <option v-for="genre in genres">{{ genre }}</option>
+                </select>
+            </div>
+
+            <div class="addMovieVertContainer">
+                <label for="imageUrl">Image url:</label>
+                <input type="url" v-model="imageUrl" class="inputField">
+            </div>
+        
+            <div class="addMovieDescriptionContainer">
+                <label for="description">Description:</label>
+                <div>
+                    <textarea rows="5" id="description" v-model="description" class="inputField"></textarea>
+
+                    <div class="buttonContainer">
+                        <input type="reset" value="Clear" @click.prevent="clearForm">
+                        <input type="submit" value="Add" @click.prevent="addMovie">
+                    </div>
+                </div>
+            </div>
+
                   
         </form>
     `,

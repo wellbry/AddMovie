@@ -9,12 +9,14 @@ export default {
         MovieList
     },
     template: `
-        <div id="appWrapper">
-            <add-movie @addmovie="addMovie" />
-            <br>
+        <div id="appWrapperVert">
+            <div id="appWrapperHor">
+                <add-movie @addmovie="addMovie" />
+                <br>
 
-            <movie-list :movies="movies" @remove-movie="storeMovies" />
-            
+                <movie-list :movies="movies" @remove-movie="storeMovies" />
+                
+            </div>
         </div>
     `,
     data() {

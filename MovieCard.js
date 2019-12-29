@@ -1,7 +1,7 @@
 
 
 export default {
-    props: { 
+    props: {
         movie: Object
     },
     template: `
@@ -18,7 +18,7 @@ export default {
                 {{ movie.genre }}
             </p>
             <p class="movieCardImg" v-if="movie.imageUrl != '' ">
-                <img :src="movie.imageUrl" alt="Movie Poster">
+                <img :src="movie.imageUrl" alt="Movie Poster" class="movieCardImg">
             </p>
             <p class="movieCardDescription">
                 {{ movie.description }}
@@ -26,7 +26,7 @@ export default {
         </div>
     `,
     methods: {
-        removeMovie(){
+        removeMovie() {
             this.$emit('remove-movie', this.movie)
         }
     },
