@@ -13,29 +13,26 @@ export default {
             <add-movie @addmovie="addMovie" />
             <br>
 
-            <label for="sortBy">Sort By:</label>
-            <select name="sortBy" id="sortBy" v-model="sortBy">
-                <option >Title</option>
-                <option >Genre</option>
-                <option >Rating</option>
-            </select>
-            
-            <movie-list :movies="sortedMovies" />
+            <movie-list :movies="movies" @remove-movie="storeMovies" />
             
         </div>
     `,
     data() {
         return {
             movies: [],
-            sortBy: 'Title'       
+            /* sortBy: 'Title' */   
         }
     },
     methods: {
         addMovie(movie) {
             this.movies.push(movie)
+            localStorage.setItem('movies', JSON.stringify(this.movies));
+        },
+        storeMovies() {
+            localStorage.setItem('movies', JSON.stringify(this.movies));
         }
     },
-    computed: {
+    /* computed: {
         sortedMovies() {
             switch (this.sortBy) {
                 case 'Title':
@@ -60,11 +57,14 @@ export default {
                     break;
                 case 'Rating':
                     this.movies.sort(function (a, b) {
-                        return a.rating - b.rating
+                        return b.rating - a.rating
                     })
                     break;
             }
             return this.movies
         }
+    }, */
+    created() {
+        this.movies = JSON.parse(localStorage.getItem('movies'))
     },
 }

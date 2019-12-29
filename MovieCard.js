@@ -24,7 +24,7 @@ export default {
     `,
     methods: {
         removeMovie(){
-            this.$emit('removemovie', this.movie)
+            this.$emit('remove-movie', this.movie)
         }
     },
 }
