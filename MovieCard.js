@@ -17,6 +17,9 @@ export default {
             <p class="movieCardGenre">
                 {{ movie.genre }}
             </p>
+            <p class="movieCardImg" v-if="movie.imageUrl != '' ">
+                <img :src="movie.imageUrl" alt="Movie Poster">
+            </p>
             <p class="movieCardDescription">
                 {{ movie.description }}
             </p>

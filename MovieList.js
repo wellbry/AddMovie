@@ -9,13 +9,15 @@ export default {
     },
     template: `
         <div class="movieList"> 
-        
-                <label for="sortBy">Sort By:</label>
-                <select name="sortBy" id="sortBy" v-model="sortBy">
-                    <option >Title</option>
-                    <option >Genre</option>
-                    <option >Rating</option>
-                </select>
+
+                <div v-if="movies.length > 0">
+                    <label for="sortBy">Sort By:</label>
+                    <select name="sortBy" id="sortBy" v-model="sortBy">
+                        <option >Title</option>
+                        <option >Genre</option>
+                        <option >Rating</option>
+                    </select>
+                </div>
 
                 <movie-card :movie="movie"
                 v-for="movie in sortedMovies"

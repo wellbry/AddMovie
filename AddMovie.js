@@ -4,19 +4,22 @@ export default{
     template: `
         <form class="addMovieForm">
             <label for="title">Title:</label>
-            <input type="text" id="title" v-model="title" required>
+            <input type="text" id="title" v-model="title">
 
             <label for="myRating">Rating:</label>
-            <input type="range" min="1" max="5" class="slider" id="myRating" v-model="rating" required>
+            <input type="range" min="1" max="5" class="slider" id="rating" v-model="rating">
 
             <label for="genre">Genre:</label>
-            <select name="genre" id="genre" v-model="genre" required>
+            <select name="genre" id="genre" v-model="genre">
                 <option disabled value="">Please select one</option>
                 <option v-for="genre in genres">{{ genre }}</option>
             </select>
+
+            <label for="imageUrl">Image url:</label>
+            <input type="url" v-model="imageUrl">
         
             <label for="description">Description:</label>
-            <textarea rows="3" cols="30" id="description" v-model="description"></textarea required>
+            <textarea rows="3" cols="30" id="description" v-model="description"></textarea>
 
             <div class="buttonContainer">
                 <input type="reset" value="Clear" @click.prevent="clearForm">
@@ -31,6 +34,7 @@ export default{
             rating: 3,
             genre: '',
             description: '',
+            imageUrl: '',
             genres: [
                 'Action',
                 'Drama',
@@ -46,6 +50,7 @@ export default{
                 this.rating,
                 this.genre,
                 this.description,
+                this.imageUrl,
             )
             console.log(movie);
             this.$emit('addmovie', movie)
@@ -56,6 +61,7 @@ export default{
             this.rating = 3
             this.genre = ''
             this.description = ''
+            this.imageUrl = ''
         }
     },
 }
