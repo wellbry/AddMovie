@@ -11,7 +11,8 @@ export default{
 
             <label for="genre">Genre:</label>
             <select name="genre" id="genre" v-model="genre" required>
-                <option v-for="genre in genres" :value="genre">{{ genre }}</option>
+                <option disabled value="">Please select one</option>
+                <option v-for="genre in genres">{{ genre }}</option>
             </select>
         
             <label for="description">Description:</label>
