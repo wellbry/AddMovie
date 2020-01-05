@@ -12,7 +12,7 @@ export default {
             <div class="addMovieVertContainer">
                 <label for="myRating">Rating:</label>
                 <span class="inputField">
-                    1<input type="range" min="1" max="5" class="slider" id="rating" v-model="rating" >5
+                    1 <input type="range" min="1" max="5" class="slider" id="rating" v-model="rating" > 5
                 </span>
             </div>
 

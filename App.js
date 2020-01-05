@@ -10,7 +10,11 @@ export default {
     },
     template: `
         <div id="appWrapperVert">
+
             <div id="appWrapperHor">
+
+                <h1>My favourite Movies</h1>
+    
                 <add-movie @addmovie="addMovie" />
                 <br>
 

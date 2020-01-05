@@ -2,18 +2,33 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 #appWrapperVert{
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    flex-direction: column; */
+    /* justify-content: center; */
+    background-image: url(./background.jpg);
+    background-repeat: repeat;
+    background-color: black;
+   /*  width: 1500px;
+    height: 2000px; */
+    /* background-size: initial; */
 }
 
 #appWrapperHor{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 500px;
+    width: 95vp;
+}
+
+h1{
+    color: white;
+    font-size: 2.7em;
+    text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 5px 5px 5px #000;
 }
 
 .addMovieForm{
@@ -24,8 +39,11 @@
     height: fit-content;
 }
 
-.addMovieForm, .movieCard{
-    border: 2px solid black;
+.addMovieForm, .movieCard, #sortByContainer{
+    color: white;
+    background-color: rgb(60, 60, 60);
+    /* background-color: darkslategray; */
+    border: 2px solid white;
     border-radius: 12px;   
     padding: 15px;
     box-shadow: 5px 5px 5px black;
@@ -63,11 +81,13 @@ label{
 .movieList{
     display: flex;
     flex-direction: column;
-    /* width: 1000px; */
-    min-width: 90vp;
+    width: 90vp;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #sortByContainer{
+    color: white;
     padding-left: 15px;
     padding-bottom: 10px;
     align-self: center;
@@ -76,6 +96,7 @@ label{
 .movieCardList{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .movieCard{
@@ -96,8 +117,16 @@ label{
     justify-content: flex-end;
 }
 
+.movieCardBody{
+    display: flex;
+
+}
+
 .movieCardDescription{
     font-size: smaller;
+    max-width: 250px;
+    min-width: 120px;
+    margin-left: 10px;
 }
 
 .movieCardImg{
