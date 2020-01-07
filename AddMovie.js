@@ -6,19 +6,19 @@ export default {
 
             <div class="addMovieVertContainer">
                 <label for="title">Title:</label>
-                <input type="text" id="title" v-model="title" class="inputField">
+                <input type="text" v-model="title" class="inputField">
             </div>
 
             <div class="addMovieVertContainer">
                 <label for="myRating">Rating:</label>
                 <span class="inputField">
-                    1 <input type="range" min="1" max="5" class="slider" id="rating" v-model="rating" > 5
+                    1 <input type="range" min="1" max="5" id="rating" v-model="rating" > 5
                 </span>
             </div>
 
             <div class="addMovieVertContainer">
                 <label for="genre">Genre:</label>
-                <select name="genre" id="genre" v-model="genre" class="inputField">
+                <select name="genre" v-model="genre" class="inputField">
                     <option disabled value="">Please select one</option>
                     <option v-for="genre in genres">{{ genre }}</option>
                 </select>
@@ -32,7 +32,7 @@ export default {
             <div class="addMovieDescriptionContainer">
                 <label for="description">Description:</label>
                 <div>
-                    <textarea rows="5" id="description" v-model="description" class="inputField"></textarea>
+                    <textarea rows="5" v-model="description" class="inputField"></textarea>
 
                     <div class="buttonContainer">
                         <input type="reset" value="Clear" @click.prevent="clearForm">

@@ -6,5 +6,4 @@ export default class Movie {
         this.description = description
         this.imageUrl = imageUrl
     }
-
 }

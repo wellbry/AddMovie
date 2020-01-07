@@ -1,26 +1,30 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
+
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
 #appWrapperVert{
-    /* display: flex;
-    flex-direction: column; */
-    /* justify-content: center; */
     background-image: url(./background.jpg);
     background-repeat: repeat;
     background-color: black;
-   /*  width: 1500px;
-    height: 2000px; */
-    /* background-size: initial; */
 }
 
 #appWrapperHor{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 95vp;
 }
 
@@ -32,55 +36,93 @@ h1{
 }
 
 .addMovieForm{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
 }
 
 .addMovieForm, .movieCard, #sortByContainer{
     color: white;
     background-color: rgb(60, 60, 60);
-    /* background-color: darkslategray; */
     border: 2px solid white;
     border-radius: 12px;   
     padding: 15px;
-    box-shadow: 5px 5px 5px black;
+    -webkit-box-shadow: 5px 5px 5px black;
+            box-shadow: 5px 5px 5px black;
     margin: 10px;
 }
 
 .addMovieVertContainer{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     padding: 5px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
 }
 
 .addMovieDescriptionContainer{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 5px;
 }
 
 label{
     width: 100px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
+}
+
+#rating{
+    width: 176px;
 }
 
 .inputField{
     width: 200px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
 }
 
 .buttonContainer{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .movieList{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 90vp;
     margin-left: 20px;
     margin-right: 20px;
@@ -90,45 +132,107 @@ label{
     color: white;
     padding-left: 15px;
     padding-bottom: 10px;
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
 }
 
 .movieCardList{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .movieCard{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex: 1;
-    /* width: fit-content; */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
     max-width: fit-content;
 }
 
 .movieCardTitle{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .movieCardGenre{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
 }
 
 .movieCardBody{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 
 }
 
 .movieCardDescription{
     font-size: smaller;
-    max-width: 250px;
     min-width: 120px;
     margin-left: 10px;
 }
 
 .movieCardImg{
     width: 200px;
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .movieCardList{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+
+    label{
+        width: 90px;
+    }
+    
+    .inputField{
+        width: 160px;
+    }
+
+    #rating{
+        width: 136px;
+    }
+
+    .movieCardDescription{
+        min-width: 100px;
+    }
+
+    .movieCardImg{
+        width: 140px;
+    }
 }
